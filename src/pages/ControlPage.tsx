@@ -13,8 +13,8 @@ import {
 } from "@chakra-ui/react";
 import { useQuery } from "react-query";
 import postsAPI from "../api/postsAPI";
-import PostSection from "../components/PostSection";
-import PostModal from "../components/PostModal";
+import PostSection from "../components/CMS/PostSection";
+import PostModal from "../components/CMS/PostModal";
 import { useDisclosure } from "@chakra-ui/react";
 
 function ControlPage() {

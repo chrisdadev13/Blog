@@ -9,14 +9,7 @@ import {
   Button,
   Badge,
 } from "@chakra-ui/react";
-import postsAPI from "../api/postsAPI";
-
-interface PostInformation {
-  id: string;
-  title: string;
-  content: string;
-  tags: string[];
-}
+import postsAPI from "../../api/postsAPI";
 
 function PostCard({ id, title, content, tags }: PostInformation) {
   const limitParagraph = (content: string) => {

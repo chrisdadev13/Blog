@@ -8,6 +8,13 @@ interface Post {
   updatedAt: string;
 }
 
+interface PostInformation {
+  id: string;
+  title: string;
+  content: string;
+  tags: string[];
+}
+
 interface PostValues {
   title: string;
   content: string;

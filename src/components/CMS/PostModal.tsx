@@ -18,7 +18,7 @@ import {
 import { useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Remarkable } from "remarkable";
-import postsAPI from "../api/postsAPI";
+import postsAPI from "../../api/postsAPI";
 
 interface ModalProps {
   isOpen: boolean;
