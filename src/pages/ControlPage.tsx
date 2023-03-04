@@ -19,8 +19,10 @@ import { useDisclosure } from "@chakra-ui/react";
 
 function ControlPage() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { isLoading, isError, data, error } = useQuery(["posts"], () =>
-    postsAPI.getPosts()
+  const { isLoading, isError, data, error } = useQuery(
+    ["posts"],
+    () => postsAPI.getPosts(),
+    { refetchInterval: 2000 }
   );
 
   if (isLoading)
