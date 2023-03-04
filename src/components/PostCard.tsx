@@ -9,6 +9,7 @@ import {
   Button,
   Badge,
 } from "@chakra-ui/react";
+import postsAPI from "../api/postsAPI";
 
 interface PostInformation {
   id: string;
@@ -22,6 +23,12 @@ function PostCard({ id, title, content, tags }: PostInformation) {
     let contentPreview = content.substring(0, 60);
     return contentPreview;
   };
+
+  const deletePost = async (e: any) => {
+    const elementId = e.target.id;
+    await postsAPI.deletePost(elementId);
+  };
+
   return (
     <Card key={id}>
       <CardHeader>
@@ -34,7 +41,7 @@ function PostCard({ id, title, content, tags }: PostInformation) {
       </CardBody>
       <CardFooter>
         <Button color="twitter.800">Edit</Button>
-        <Button color="red.600" mx="3">
+        <Button color="red.600" mx="3" id={id} onClick={deletePost}>
           Delete
         </Button>
       </CardFooter>

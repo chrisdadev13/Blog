@@ -13,6 +13,7 @@ import {
   Box,
   Flex,
   Badge,
+  useToast,
 } from "@chakra-ui/react";
 import { useDisclosure } from "@chakra-ui/react";
 import React, { useState } from "react";
@@ -30,6 +31,8 @@ function PostModal({ isOpen, onClose }: ModalProps) {
     content: "",
     tags: [],
   });
+
+  const toast = useToast();
 
   const handleTitleChange = (e: any) => {
     const value = e.target.value;
@@ -79,6 +82,13 @@ function PostModal({ isOpen, onClose }: ModalProps) {
 
   const savePost = async () => {
     await postsAPI.createPost(postData);
+    toast({
+      title: "Post created successfully.",
+      description: "We've stored your post in our database for you.",
+      status: "success",
+      duration: 9000,
+      isClosable: true,
+    });
   };
 
   const md = new Remarkable();
