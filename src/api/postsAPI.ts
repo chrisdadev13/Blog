@@ -25,8 +25,14 @@ const getPosts = async () => {
   return data;
 };
 
+const getPost = async (postId: string) => {
+  const { data } = await api.get(`/get/${postId}`);
+  return data;
+};
+
 const postsAPI = {
   getPosts,
+  getPost,
   deletePost,
   createPost,
 };

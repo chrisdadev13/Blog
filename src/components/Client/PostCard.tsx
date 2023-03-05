@@ -20,7 +20,7 @@ function PostCard({
     <LinkBox as="article" maxW="sm" p="5" borderWidth="1px" rounded="md">
       <Box>{createdAt}</Box>
       <Heading size="md" my="2">
-        <LinkOverlay href="#">{title}</LinkOverlay>
+        <LinkOverlay href={`post/${id}`}>{title}</LinkOverlay>
       </Heading>
       <Text mb="3">{limitParagraph(content)}...</Text>
     </LinkBox>
