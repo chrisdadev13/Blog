@@ -6,8 +6,10 @@ import postsAPI from "../api/postsAPI";
 const usePost = () => {
   const { postId } = useParams();
 
-  const { isLoading, isError, data, error } = useQuery(["post"], () =>
-    postsAPI.getPost(postId as string)
+  const { isLoading, isError, data, error } = useQuery(
+    ["post"],
+    () => postsAPI.getPost(postId as string),
+    { refetchInterval: 1000 }
   );
 
   return {

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Container,
   Box,
@@ -64,7 +64,7 @@ function PostPage() {
       </Box>
     );
 
-  if (isError) return <Heading>{error as any}</Heading>;
+  if (isError) return <Heading>Error</Heading>;
 
   const md = new Remarkable();
 
