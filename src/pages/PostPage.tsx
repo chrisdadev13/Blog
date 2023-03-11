@@ -16,7 +16,7 @@ import { useParams } from "react-router-dom";
 import commentsAPI from "../api/commentsAPI";
 
 function PostPage() {
-  const { data, isLoading, isError, error } = usePost();
+  const { getPostData, isError, isLoading, data } = usePost();
   const { data: comments } = useComment();
   const { postId } = useParams();
 

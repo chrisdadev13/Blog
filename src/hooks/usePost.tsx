@@ -6,7 +6,7 @@ import postsAPI from "../api/postsAPI";
 const usePost = () => {
   const { postId } = useParams();
 
-  const { isLoading, isError, data, error } = useQuery(
+  const { isLoading, isError, data, error, ...getPostData } = useQuery(
     ["post"],
     () => postsAPI.getPost(postId as string),
     { refetchInterval: 1000 }
@@ -17,6 +17,7 @@ const usePost = () => {
     isError,
     data,
     error,
+    getPostData,
   };
 };
 
